@@ -23,9 +23,9 @@ public class Clients {
 		
 		//Backward compatibility
 		// We shouldn't write the like below
-		HashMap h=new HashMap();
-		h.put("Mohit", 7);
-		h.put(7,"Mohit");
+//		HashMap h=new HashMap();
+//		h.put("Mohit", 7);
+//		h.put(7,"Mohit");
 		// both the above line don't show any error but will create issue
 		
 		//Wrapper classes- Integer,Double, Long - inherit from Object class
@@ -38,6 +38,27 @@ public class Clients {
 		
 		Pair.dodo();
 		
+		// Inheritance in Generics
+		List<Dog> dogs=new ArrayList<>();
+		dogs.add(new Dog("Tobby"));
+		dogs.add(new Dog("Tommy"));
+		
+		
+		List<Animal> animals=new ArrayList<>();
+		animals.add(new Dog("Bouncy"));
+		animals.add(new Dog("Browny"));
+		
+		AnimalUtility.printAnimalNames(animals);
+		//able to pass list of animals
+		AnimalUtility.printAnimalNames(dogs);
+		//In the above line getting error:
+		/*The method printAnimalNames(List<Animal>)
+		in the type AnimalUtility is not applicable
+		for the arguments (List<Dog>)*/
+		
+		/*When we apply Generics inheritance i.e. 
+		 * T extends Animal then we can supply 
+		 * the List of dogs*/
 		
 	}
 
