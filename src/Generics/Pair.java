@@ -19,6 +19,7 @@ public class Pair <V,S> {
 	public V getFirst() {
 		return first;
 	}
+	
 	public S getSecond() {
 		return second;
 	}
